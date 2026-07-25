@@ -3,65 +3,441 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4ABnC | Enterprise AI & Tech Consultancy</title>
-  <link rel="stylesheet" href="style.css">
+  <title>4ABnC | Enterprise AI, Strategy & Hardware-Agnostic EV Charge</title>
+  <style>
+    /* -------------------------------------------------------------------------- */
+    /* 1. DESIGN SYSTEM & VARIABLES                                               */
+    /* -------------------------------------------------------------------------- */
+    :root {
+      --bg-main: #070a12;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(0, 242, 254, 0.4);
+      --accent-cyan: #00f2fe;
+      --accent-blue: #4facfe;
+      --text-primary: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(79, 172, 254, 0.05) 0%, transparent 40%);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* 2. NAVIGATION                                                              */
+    /* -------------------------------------------------------------------------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(7, 10, 18, 0.8);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #fff 40%, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 28px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent-cyan);
+    }
+
+    .nav-cta {
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+      color: #000 !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      -webkit-text-fill-color: initial;
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* 3. HERO SECTION                                                            */
+    /* -------------------------------------------------------------------------- */
+    .hero {
+      padding: 100px 8% 60px 8%;
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid var(--border-glow);
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 36px auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+      color: #050811;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 242, 254, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border-subtle);
+      transition: border-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* 4. BENTO GRID SYSTEM                                                       */
+    /* -------------------------------------------------------------------------- */
+    .section-title {
+      text-align: center;
+      margin: 80px 0 40px 0;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      padding: 0 8% 80px 8%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bento-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+    }
+
+    /* Bento Column Spans */
+    .col-8 { grid-column: span 8; }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .bento-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .bento-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 15px;
+      background: linear-gradient(90deg, #fff, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* 5. FORM & INTAKE SECTION                                                  */
+    /* -------------------------------------------------------------------------- */
+    .form-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 650px;
+      margin: 0 auto 100px auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* 6. FOOTER & RESPONSIVE BREAKPOINTS                                        */
+    /* -------------------------------------------------------------------------- */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .col-8, .col-6, .col-4 { grid-column: span 12; }
+      header { padding: 15px 5%; }
+      .bento-grid { padding: 0 5% 60px 5%; }
+      footer { flex-direction: column; gap: 15px; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <header>
-    <h2>4ABnC</h2>
+    <div class="brand">4ABnC</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="ev-charge.html">4ABnC EV Charge</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">Consultancy</a>
+      <a href="#ev-charge">EV Charge Platform</a>
+      <a href="#contact" class="nav-cta">Initiate Engagement</a>
     </nav>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="hero">
-    <h1>From Strategy to Execution: Next-Gen AI & Tech Solutions</h1>
-    <p class="sub">4ABnC bridges high-level technology strategy with hands-on project delivery, sourcing, and implementation.</p>
-    <a href="#contact" class="btn">Explore Services</a>
-    <a href="ev-charge.html" class="btn">Discover EV Charge</a>
-  </section>
-
-  <section class="grid">
-    <div class="card">
-      <h3>Strategic AI Consultancy</h3>
-      <p>Designing AI integration roadmaps, software architectures, and tech frameworks aligned with your business model.</p>
-    </div>
-    <div class="card">
-      <h3>Project Management</h3>
-      <p>Delivering complex software deployments and large-scale tech implementations on time and within scope.</p>
-    </div>
-    <div class="card">
-      <h3>Strategic Sourcing</h3>
-      <p>Hardware-agnostic procurement and tech stack optimization without vendor lock-in.</p>
+    <div class="badge">Enterprise Technology & Intelligence</div>
+    <h1>Strategic Advisory Meets Hardware-Agnostic Execution</h1>
+    <p>4ABnC accelerates enterprise digital transformation through AI implementation, technical program management, and high-impact infrastructure platforms.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Consultancy Inquiry</a>
+      <a href="#ev-charge" class="btn-secondary">Explore 4ABnC EV Charge</a>
     </div>
   </section>
 
-  <section id="contact">
-    <form action="https://formspree.io/f/mdaqppey" method="POST">
-      <h2 style="text-align: center;">Partner With 4ABnC</h2>
-      <label>Full Name</label>
-      <input type="text" name="name" required>
+  <!-- SERVICES BENTO GRID -->
+  <div class="section-title" id="about">
+    <h2>Core Expertise</h2>
+    <p>Integrated capabilities for complex technical landscapes</p>
+  </div>
 
-      <label>Corporate Email</label>
-      <input type="email" name="email" required>
+  <section class="bento-grid">
+    <div class="bento-card col-8">
+      <div>
+        <div class="card-tag">Strategic Advisory</div>
+        <h3>AI Architecture & Strategic Implementation</h3>
+        <p>Designing enterprise-ready AI pipelines, machine learning integration roadmaps, and software governance built for long-term scalability without platform lock-in.</p>
+      </div>
+      <div class="stat-number">End-to-End Architecture</div>
+    </div>
 
-      <label>Service Area</label>
-      <select name="service">
-        <option>Tech & AI Advisory</option>
-        <option>Project Management</option>
-        <option>Strategic Sourcing</option>
-        <option>4ABnC EV Charge Partnership</option>
-      </select>
+    <div class="bento-card col-4">
+      <div>
+        <div class="card-tag">Project Management</div>
+        <h3>Technical Program Delivery</h3>
+        <p>Rigorous management of mission-critical software, hardware deployments, and cross-functional teams.</p>
+      </div>
+      <div class="stat-number">100% Scope Control</div>
+    </div>
 
-      <label>Project Details</label>
-      <textarea name="message" rows="4" required></textarea>
+    <div class="bento-card col-4">
+      <div>
+        <div class="card-tag">Strategic Sourcing</div>
+        <h3>Vendor-Agnostic Procurement</h3>
+        <p>Mitigating vendor dependency by sourcing best-in-class tech stacks, hardware components, and cloud infrastructure.</p>
+      </div>
+    </div>
 
-      <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+    <div class="bento-card col-8">
+      <div>
+        <div class="card-tag">Flagship Platform</div>
+        <h3>4ABnC EV Charge Solution</h3>
+        <p>An aggregator software layer connecting Charge Point Operators (CPOs), fleet networks, and drivers into a unified ecosystem through open APIs and single-wallet payments.</p>
+      </div>
+      <div class="stat-number">Hardware Agnostic</div>
+    </div>
+  </section>
+
+  <!-- EV CHARGE DETAILED BENTO SECTION -->
+  <div class="section-title" id="ev-charge">
+    <h2>4ABnC EV Charge Platform</h2>
+    <p>Eliminating app fatigue & fragmentation across the electric mobility value chain</p>
+  </div>
+
+  <section class="bento-grid">
+    <div class="bento-card col-4">
+      <div class="card-tag">Driver Experience</div>
+      <h3>Universal Mobility App</h3>
+      <p>Single map view across all charging networks, live availability status, and 1-tap single wallet payment settlement.</p>
+    </div>
+
+    <div class="bento-card col-4">
+      <div class="card-tag">Operator Intelligence</div>
+      <h3>CPO Network Integration</h3>
+      <p>Hardware-agnostic software layer that aggregates disparate charge networks and drives high-volume driver utilization.</p>
+    </div>
+
+    <div class="bento-card col-4">
+      <div class="card-tag">Energy & Grid</div>
+      <h3>Dynamic AI Load Balancing</h3>
+      <p>Intelligent routing and energy management that aligns electric vehicle fleets with real-time smart grid capacity.</p>
+    </div>
+  </section>
+
+  <!-- FORM / CONTACT SECTION -->
+  <div class="section-title" id="contact">
+    <h2>Partner With 4ABnC</h2>
+    <p>Submit your enterprise inquiry or EV network onboarding request below</p>
+  </div>
+
+  <div class="form-wrapper">
+    <!-- Replace action URL with your unique Formspree Endpoint -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Corporate Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="s.jenkins@company.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="interest">Area of Engagement</label>
+        <select id="interest" name="interest" class="form-control">
+          <option>AI Strategy & Technical Advisory</option>
+          <option>Project Management & Execution</option>
+          <option>4ABnC EV Charge - CPO Integration</option>
+          <option>4ABnC EV Charge - Fleet & Commercial Partnership</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Project Scope / Details</label>
+        <textarea id="message" name="message" rows="4" class="form-control" placeholder="Describe your technical requirements or operational goals..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; font-size: 1rem;">Submit Inquiry</button>
     </form>
-  </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>&copy; 2026 4ABnC Consultancy & Technology Services. All rights reserved.</div>
+    <div>Hardware-Agnostic Software Intelligence</div>
+  </footer>
 
 </body>
 </html>
