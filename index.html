@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SECURITY HEADERS -->
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+
   <title>4A Business and Consultancy | Enterprise AI & EV Charge Platform</title>
   <style>
     /* -------------------------------------------------------------------------- */
@@ -85,7 +91,7 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* 3. HERO SECTION WITH BACKGROUND IMAGE                                     */
+    /* 3. HERO SECTION                                                           */
     /* -------------------------------------------------------------------------- */
     .hero {
       position: relative;
@@ -385,6 +391,10 @@
 
   <div class="form-wrapper">
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      
+      <!-- HONEYPOT SPAM PROTECTION (Hidden from human users, catches automated bots) -->
+      <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
