@@ -1,3 +1,10 @@
+Here is the updated HTML code incorporating all your requested updates:
+
+1. Replaced all occurrences of **4ABnC EV Charge** with **ChargeWhere EV Charge**.
+2. Updated the **EV Mobility App** image and the **Flagship Platform** image to use your provided image (`Screenshot 2026-07-28 125858.png`).
+3. Added direct WhatsApp contact links for both **General Inquiry** and **EV Charge Integration** alongside the secondary button options.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +16,10 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
 
-  <title>4A Business and Consultancy | Enterprise AI & EV Charge Platform</title>
+  <title>4A Business and Consultancy | Enterprise AI & ChargeWhere EV Charge</title>
   <style>
     /* -------------------------------------------------------------------------- */
-    /* 1. DESIGN SYSTEM & COLOR PALETTE                                          */
+    /* 1. DESIGN SYSTEM & COLOR PALETTE                                           */
     /* -------------------------------------------------------------------------- */
     :root {
       --bg-main: #070a12;
@@ -42,7 +49,7 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* 2. HEADER & LOGO INTEGRATION                                              */
+    /* 2. HEADER & LOGO INTEGRATION                                               */
     /* -------------------------------------------------------------------------- */
     header {
       display: flex;
@@ -91,7 +98,7 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* 3. HERO SECTION                                                           */
+    /* 3. HERO SECTION                                                            */
     /* -------------------------------------------------------------------------- */
     .hero {
       position: relative;
@@ -146,6 +153,7 @@
       font-weight: 700;
       text-decoration: none;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
     }
 
     .btn-primary:hover {
@@ -161,14 +169,31 @@
       font-weight: 600;
       text-decoration: none;
       border: 1px solid var(--border-subtle);
+      display: inline-block;
     }
 
     .btn-secondary:hover {
       border-color: var(--accent-cyan);
     }
 
+    .btn-whatsapp {
+      background: #25D366;
+      color: #000;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    }
+
     /* -------------------------------------------------------------------------- */
-    /* 4. PHOTO BENTO GRID SYSTEM                                                */
+    /* 4. PHOTO BENTO GRID SYSTEM                                                 */
     /* -------------------------------------------------------------------------- */
     .section-title {
       text-align: center;
@@ -205,7 +230,7 @@
 
     .card-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       border-bottom: 1px solid var(--border-subtle);
     }
@@ -236,7 +261,7 @@
     .bento-card p { color: var(--text-muted); font-size: 0.95rem; }
 
     /* -------------------------------------------------------------------------- */
-    /* 5. FORM & FOOTER                                                          */
+    /* 5. FORM & FOOTER                                                           */
     /* -------------------------------------------------------------------------- */
     .form-wrapper {
       background: var(--bg-card);
@@ -261,6 +286,14 @@
     }
 
     .form-control:focus { outline: none; border-color: var(--accent-cyan); }
+
+    .quick-chat-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
 
     footer {
       border-top: 1px solid var(--border-subtle);
@@ -288,7 +321,7 @@
     </a>
     <nav>
       <a href="#about">Consultancy</a>
-      <a href="#ev-charge">EV Charge Platform</a>
+      <a href="#ev-charge">ChargeWhere EV Charge</a>
       <a href="#contact" class="nav-cta">Initiate Engagement</a>
     </nav>
   </header>
@@ -300,7 +333,8 @@
     <p>4A Business and Consultancy accelerates enterprise digital transformation through AI implementation, technical program management, and high-impact infrastructure platforms.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Consultancy Inquiry</a>
-      <a href="#ev-charge" class="btn-secondary">Explore 4ABnC EV Charge</a>
+      <a href="https://wa.me/6581683119?text=Hi%204ABNC%20team,%20I%20am%20interested%20in%20your%20technical%20advisory%20services." target="_blank" class="btn-whatsapp">WhatsApp General Inquiry</a>
+      <a href="#ev-charge" class="btn-secondary">Explore ChargeWhere EV Charge</a>
     </div>
   </section>
 
@@ -339,10 +373,10 @@
     </div>
 
     <div class="bento-card col-8">
-      <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop" alt="EV Charging Station Platform" class="card-image">
+      <img src="Screenshot 2026-07-28 125858.png" alt="ChargeWhere EV Charge Platform" class="card-image">
       <div class="card-content">
         <div class="card-tag">Flagship Platform</div>
-        <h3>4ABnC EV Charge Solution</h3>
+        <h3>ChargeWhere EV Charge Solution</h3>
         <p>An aggregator software layer connecting Charge Point Operators (CPOs), fleet networks, and drivers into a unified ecosystem through open APIs and single-wallet payments.</p>
       </div>
     </div>
@@ -350,13 +384,13 @@
 
   <!-- EV CHARGE PLATFORM WITH IMAGES -->
   <div class="section-title" id="ev-charge">
-    <h2>4ABnC EV Charge Platform</h2>
+    <h2>ChargeWhere EV Charge Platform</h2>
     <p>Connecting ecosystems, empowering drivers, and accelerating electrification</p>
   </div>
 
   <section class="bento-grid">
     <div class="bento-card col-4">
-      <img src="https://images.unsplash.com/photo-1558441719-67724285df64?q=80&w=800&auto=format&fit=crop" alt="EV Mobility App" class="card-image">
+      <img src="Screenshot 2026-07-28 125858.png" alt="ChargeWhere EV Mobility App" class="card-image">
       <div class="card-content">
         <div class="card-tag">Driver Experience</div>
         <h3>Universal Mobility App</h3>
@@ -383,10 +417,19 @@
     </div>
   </section>
 
-  <!-- INTAKE FORM -->
+  <!-- INTAKE FORM & WHATSAPP ACTIONS -->
   <div class="section-title" id="contact">
     <h2>Partner With 4A Business and Consultancy</h2>
-    <p>Submit your enterprise inquiry or EV network onboarding request below</p>
+    <p>Submit your enterprise inquiry or connect directly via WhatsApp</p>
+  </div>
+
+  <div class="quick-chat-links">
+    <a href="https://wa.me/6581683119?text=Hi%204ABNC%20team,%20I%20am%20interested%20in%20your%20technical%20advisory%20services." target="_blank" class="btn-whatsapp">
+      💬 General Inquiry (WhatsApp)
+    </a>
+    <a href="https://wa.me/6581683119?text=Hi%204ABNC%20team,%20I%20would%20like%20to%20discuss%20CPO/Fleet%20integration%20on%20your%20EV%20platform." target="_blank" class="btn-whatsapp">
+      ⚡ EV Charge Integration (WhatsApp)
+    </a>
   </div>
 
   <div class="form-wrapper">
@@ -410,8 +453,8 @@
         <select id="interest" name="interest" class="form-control">
           <option>AI Strategy & Technical Advisory</option>
           <option>Project Management & Execution</option>
-          <option>4ABnC EV Charge - CPO Integration</option>
-          <option>4ABnC EV Charge - Fleet & Commercial Partnership</option>
+          <option>ChargeWhere EV Charge - CPO Integration</option>
+          <option>ChargeWhere EV Charge - Fleet & Commercial Partnership</option>
         </select>
       </div>
 
@@ -432,3 +475,5 @@
 
 </body>
 </html>
+
+```
