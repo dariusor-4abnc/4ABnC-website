@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- SECURITY HEADERS -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+
+  <title>Privacy Policy | 4A Business and Consultancy</title>
+  <meta name="description" content="How 4A Business and Consultancy handles personal data collected through 4abnc.com, under Singapore's PDPA.">
+  <style>
+    /* Same layout as eduflow-privacy.html, in the corporate cyan accent */
+    :root {
+      --bg-main: #070a12;
+      --bg-card: rgba(15, 23, 42, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-glow: rgba(0, 242, 254, 0.4);
+      --accent-cyan: #00f2fe;
+      --accent-blue: #4facfe;
+      --accent-indigo: #00f2fe;
+      --border-indigo: rgba(0, 242, 254, 0.4);
+      --text-primary: #f8fafc;
+      --text-body: #cbd5e1;
+      --text-muted: #94a3b8;
+      --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* HEADER (matches index.html) */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 8%;
+      background: rgba(7, 10, 18, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .brand-logo { height: 48px; width: auto; display: block; object-fit: contain; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+    nav a:hover { color: var(--accent-cyan); }
+    .nav-cta {
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+      color: #000 !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 88px 8% 56px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(0, 242, 254, 0.1) 0%, transparent 70%);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid var(--border-indigo);
+      color: var(--accent-indigo);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 720px; margin: 0 auto; }
+    .meta { margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); }
+    .meta strong { color: var(--text-primary); font-weight: 600; }
+
+    /* AT A GLANCE */
+    .glance {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 72px;
+      padding: 0 8%;
+    }
+    .glance-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .glance-card .icon { font-size: 1.4rem; margin-bottom: 12px; }
+    .glance-card h3 { font-size: 1rem; margin-bottom: 6px; }
+    .glance-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* LAYOUT: sticky contents + policy text */
+    .policy {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 56px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 8% 96px;
+    }
+    .toc { display: block; position: sticky; top: 112px; align-self: start; }
+    .toc-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-indigo);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .toc ol { list-style: none; counter-reset: toc; border-left: 1px solid var(--border-subtle); }
+    .toc li { counter-increment: toc; }
+    .toc a {
+      display: block;
+      padding: 6px 0 6px 16px;
+      margin-left: -1px;
+      border-left: 2px solid transparent;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+    .toc a::before { content: counter(toc) ". "; }
+    .toc a:hover { color: var(--text-primary); border-left-color: var(--accent-indigo); }
+
+    article { max-width: 760px; color: var(--text-body); }
+    article section { padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid var(--border-subtle); }
+    article section:last-child { border-bottom: none; }
+    article h2 { color: var(--text-primary); font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.3px; }
+    article h2 .num { color: var(--accent-indigo); margin-right: 8px; }
+    article h3 { color: var(--text-primary); font-size: 1.05rem; margin: 24px 0 8px; }
+    article p { margin-bottom: 14px; }
+    article ul { margin: 0 0 14px 20px; }
+    article li { margin-bottom: 8px; }
+    article li::marker { color: var(--accent-indigo); }
+    article strong { color: var(--text-primary); }
+    article a { color: var(--accent-indigo); }
+
+    .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .role {
+      border-radius: 12px;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+    }
+    .role.ours { border-color: var(--border-indigo); }
+    .role-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-cyan); margin-bottom: 6px; }
+    .role.ours .role-label { color: var(--accent-indigo); }
+    .role h3 { margin: 0 0 6px; }
+    .role p { margin: 0; font-size: 0.92rem; color: var(--text-muted); }
+
+    .table-wrap { overflow-x: auto; margin: 16px 0 20px; border: 1px solid var(--border-subtle); border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 520px; }
+    th, td { text-align: left; padding: 12px 16px; vertical-align: top; border-bottom: 1px solid var(--border-subtle); }
+    th { background: rgba(0, 242, 254, 0.08); color: var(--text-primary); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--text-primary); font-weight: 600; white-space: nowrap; }
+
+    .callout {
+      border-left: 3px solid var(--accent-indigo);
+      background: rgba(0, 242, 254, 0.08);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0 20px;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+
+    .contact-card {
+      background: linear-gradient(90deg, rgba(0, 242, 254, 0.12), rgba(0, 242, 254, 0.06));
+      border: 1px solid var(--border-indigo);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .contact-card p { margin-bottom: 8px; }
+    .contact-card a { color: var(--text-primary); font-weight: 600; }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent-cyan); }
+
+    @media (max-width: 1000px) {
+      .glance { grid-template-columns: 1fr 1fr; }
+      .policy { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+      .toc { position: static; }
+    }
+    @media (max-width: 900px) {
+      header { flex-direction: column; gap: 15px; }
+      nav { flex-wrap: wrap; justify-content: center; gap: 18px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      header, .hero, .glance, .policy, footer { padding-left: 16px; padding-right: 16px; }
+      .hero { padding-top: 56px; }
+      .glance, .roles { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      :root { --text-primary: #000; --text-body: #111; --text-muted: #444; --bg-card: #fff; --border-subtle: #ccc; }
+      body { background: #fff; }
+      header, .toc, footer { display: none; }
+      .policy { grid-template-columns: 1fr; padding: 0; }
+      .hero { padding: 0 0 24px; background: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="logo.png" alt="4A Business and Consultancy" class="brand-logo">
+    </a>
+    <nav>
+      <a href="index.html#where2charge">Where2Charge</a>
+      <a href="index.html#eduflow">EduFlow</a>
+      <a href="index.html#about">Consultancy</a>
+      <a href="index.html#contact" class="nav-cta">Talk to us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">4abnc.com · Privacy</div>
+      <h1>Privacy Policy</h1>
+      <p>How 4A Business and Consultancy handles the personal data you share with us through this website, in line with Singapore's Personal Data Protection Act 2012 (PDPA).</p>
+      <div class="meta">Last updated <strong>12 October 2026</strong></div>
+    </section>
+
+    <section class="glance" aria-label="Summary">
+      <div class="glance-card">
+        <div class="icon" aria-hidden="true">✉️</div>
+        <h3>Only what you send</h3>
+        <p>We collect the details you type into our enquiry form, or send us by email or WhatsApp.</p>
+      </div>
+      <div class="glance-card">
+        <div class="icon" aria-hidden="true">💬</div>
+        <h3>Used to reply</h3>
+        <p>We use them to answer your enquiry and follow up on it. No mailing lists without your agreement.</p>
+      </div>
+      <div class="glance-card">
+        <div class="icon" aria-hidden="true">🍪</div>
+        <h3>No tracking</h3>
+        <p>This website sets no cookies and runs no analytics or advertising trackers.</p>
+      </div>
+      <div class="glance-card">
+        <div class="icon" aria-hidden="true">🚫</div>
+        <h3>Never sold</h3>
+        <p>We do not sell or rent your personal data to anyone.</p>
+      </div>
+    </section>
+
+    <div class="policy">
+      <nav class="toc" aria-label="Contents">
+        <div class="toc-title">Contents</div>
+        <ol>
+          <li><a href="#scope">Who we are and scope</a></li>
+          <li><a href="#data">Data we collect</a></li>
+          <li><a href="#use">How we use it</a></li>
+          <li><a href="#providers">Service providers</a></li>
+          <li><a href="#cookies">Cookies and tracking</a></li>
+          <li><a href="#retention">How long we keep it</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#rights">Your rights</a></li>
+          <li><a href="#transfers">Overseas transfers</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <article>
+        <section id="scope">
+          <h2><span class="num">1.</span>Who we are and scope</h2>
+          <p><strong>4A Business and Consultancy</strong> ("we", "us") is a Singapore company that builds and runs Where2Charge and EduFlow, and provides technology consultancy.</p>
+          <p>This policy covers the corporate website <strong>4abnc.com</strong> and the enquiries you send us through it, by email or by WhatsApp. Our products have their own policies, which apply when you use them:</p>
+          <div class="roles">
+            <div class="role">
+              <div class="role-label">Where2Charge</div>
+              <h3>EV charging app</h3>
+              <p><a href="https://where2charge.4abnc.com/privacy.html" target="_blank" rel="noopener">Where2Charge privacy policy</a></p>
+            </div>
+            <div class="role">
+              <div class="role-label">EduFlow</div>
+              <h3>Tuition centre platform</h3>
+              <p><a href="eduflow-privacy.html">EduFlow privacy policy</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="data">
+          <h2><span class="num">2.</span>Data we collect</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Source</th><th>What we receive</th></tr></thead>
+              <tbody>
+                <tr><td>Enquiry form</td><td>Your name, email address, company or tuition centre name, phone number if you give it, the topic you choose, your answers to the topic questions (such as your role or number of students) and your message</td></tr>
+                <tr><td>Email and WhatsApp</td><td>Your name, email address or phone number, and whatever you choose to write to us</td></tr>
+                <tr><td>Visiting the site</td><td>Standard technical data such as your IP address and browser type, which our hosting and font providers receive when your browser loads the page (section 4)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Please do not send us sensitive data, such as NRIC numbers or health information, through the form or chat.</p>
+        </section>
+
+        <section id="use">
+          <h2><span class="num">3.</span>How we use it</h2>
+          <ul>
+            <li>To reply to your enquiry and route it to the right person.</li>
+            <li>To follow up on a demo, partnership or consultancy discussion you asked about.</li>
+            <li>To keep a record of our business correspondence.</li>
+            <li>To protect the website from spam and abuse.</li>
+          </ul>
+          <p>We will only send you news or marketing if you ask us to, and you can stop it at any time.</p>
+        </section>
+
+        <section id="providers">
+          <h2><span class="num">4.</span>Service providers</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Provider</th><th>What they do</th></tr></thead>
+              <tbody>
+                <tr><td>Formspree</td><td>Receives enquiry form submissions, filters spam and forwards them to our email</td></tr>
+                <tr><td>GitHub Pages</td><td>Hosts this website; keeps server logs, including IP addresses, for security</td></tr>
+                <tr><td>Google Fonts</td><td>Serves the website's fonts; your browser's IP address is sent to Google when the fonts load</td></tr>
+                <tr><td>WhatsApp (Meta)</td><td>Carries messages you send us on WhatsApp, under WhatsApp's own terms</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>We may also disclose data where the law requires it.</p>
+        </section>
+
+        <section id="cookies">
+          <h2><span class="num">5.</span>Cookies and tracking</h2>
+          <p>4abnc.com does not set cookies and does not use analytics, advertising or social media tracking. The Where2Charge website and app use analytics, as described in their own policy.</p>
+        </section>
+
+        <section id="retention">
+          <h2><span class="num">6.</span>How long we keep it</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Data</th><th>How long we keep it</th></tr></thead>
+              <tbody>
+                <tr><td>Enquiries and correspondence</td><td>2 years after our last contact with you, unless you become a customer</td></tr>
+                <tr><td>Customer correspondence</td><td>While we work together, then 5 years for legal and accounting records</td></tr>
+                <tr><td>Form submissions held by Formspree</td><td>Deleted from Formspree within 90 days, after they reach our inbox</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="security">
+          <h2><span class="num">7.</span>Security</h2>
+          <p>The website is served over HTTPS, the form is protected against spam, and access to enquiries is limited to the staff who handle them. No system is completely secure, but we take reasonable steps to protect your data and will notify you and the authorities where the PDPA requires it.</p>
+        </section>
+
+        <section id="rights">
+          <h2><span class="num">8.</span>Your rights</h2>
+          <p>Under the PDPA you may ask to see the personal data we hold about you, correct it, or withdraw your consent to our using it. You can also ask us to delete your enquiry. Write to us (section 11) and we will respond within 30 days.</p>
+        </section>
+
+        <section id="transfers">
+          <h2><span class="num">9.</span>Overseas transfers</h2>
+          <p>Formspree, GitHub and Google process data outside Singapore, including in the United States. We use providers that protect data to a standard comparable to the PDPA.</p>
+        </section>
+
+        <section id="changes">
+          <h2><span class="num">10.</span>Changes to this policy</h2>
+          <p>We may update this policy and will change the "Last updated" date above when we do.</p>
+        </section>
+
+        <section id="contact">
+          <h2><span class="num">11.</span>Contact</h2>
+          <div class="contact-card">
+            <p><strong>Data Protection Officer</strong><br>4A Business and Consultancy</p>
+            <p>Email: <a href="mailto:enquires@4abnc.com?subject=Privacy%20request">enquires@4abnc.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/6581683119" target="_blank" rel="noopener">+65 8168 3119</a></p>
+          </div>
+          <p style="margin-top: 16px;">If you are not satisfied with our response, you may contact the <a href="https://www.pdpc.gov.sg" target="_blank" rel="noopener">Personal Data Protection Commission</a>.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 4A Business and Consultancy. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="eduflow-privacy.html">EduFlow Privacy</a>
+      <a href="https://where2charge.4abnc.com/privacy.html" target="_blank" rel="noopener">Where2Charge Privacy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
