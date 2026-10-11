@@ -12,7 +12,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
 
-  <title>4A Business and Consultancy | Enterprise AI & Where2Charge EV Charge</title>
+  <title>4A Business and Consultancy | Enterprise AI, Where2Charge EV Charge & EduFlow</title>
   <style>
     /* -------------------------------------------------------------------------- */
     /* 1. DESIGN SYSTEM & COLOR PALETTE                                           */
@@ -301,6 +301,96 @@
       font-size: 0.9rem;
     }
 
+    /* -------------------------------------------------------------------------- */
+    /* 5b. EDUFLOW PRODUCT SECTION                                                */
+    /* -------------------------------------------------------------------------- */
+    :root {
+      --accent-indigo: #818cf8;
+      --border-indigo: rgba(129, 140, 248, 0.4);
+    }
+
+    .eduflow .card-tag { color: var(--accent-indigo); }
+    .eduflow .bento-card:hover { border-color: var(--border-indigo); }
+
+    .badge-indigo {
+      background: rgba(129, 140, 248, 0.1);
+      border-color: var(--border-indigo);
+      color: var(--accent-indigo);
+      margin-bottom: 16px;
+    }
+
+    /* Timetable mock drawn in CSS: stands in for a product screenshot */
+    .ef-mock {
+      height: 220px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 20% 0%, rgba(129, 140, 248, 0.18) 0%, transparent 60%), #0b1020;
+      display: grid;
+      grid-template-columns: 44px repeat(5, 1fr);
+      grid-template-rows: 18px repeat(4, 1fr);
+      gap: 6px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .ef-mock span { display: flex; align-items: center; }
+    .ef-mock .ef-day { justify-content: center; font-weight: 600; }
+    .ef-mock .ef-slot { border-radius: 6px; background: rgba(255, 255, 255, 0.03); }
+    .ef-mock .ef-class {
+      border-radius: 6px;
+      padding: 0 8px;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: rgba(129, 140, 248, 0.22);
+      border-left: 3px solid var(--accent-indigo);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .ef-mock .ef-class.alt {
+      background: rgba(0, 242, 254, 0.14);
+      border-left-color: var(--accent-cyan);
+    }
+
+    .ef-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      background: rgba(129, 140, 248, 0.12);
+      border: 1px solid var(--border-indigo);
+      margin-bottom: 18px;
+    }
+    .eduflow .card-content.top { justify-content: flex-start; }
+
+    .ef-strip {
+      grid-column: span 12;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 28px 32px;
+      border-radius: 16px;
+      border: 1px solid var(--border-indigo);
+      background: linear-gradient(90deg, rgba(129, 140, 248, 0.12), rgba(0, 242, 254, 0.06));
+    }
+    .ef-strip h3 { font-size: 1.3rem; margin-bottom: 4px; }
+    .ef-strip p { color: var(--text-muted); font-size: 0.95rem; }
+    .ef-strip .hero-actions { justify-content: flex-start; }
+
+    .text-link { color: var(--accent-indigo); text-decoration: none; font-weight: 600; }
+    .text-link:hover { text-decoration: underline; }
+
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent-cyan); }
+
+    @media (max-width: 900px) {
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .ef-mock { padding: 16px; grid-template-columns: 36px repeat(5, 1fr); }
+    }
+
     @media (max-width: 900px) {
       .col-8, .col-6, .col-4 { grid-column: span 12; }
       header { flex-direction: column; gap: 15px; }
@@ -318,6 +408,7 @@
     <nav>
       <a href="#about">Consultancy</a>
       <a href="#ev-charge">Where2Charge EV Charge</a>
+      <a href="#eduflow">EduFlow</a>
       <a href="#contact" class="nav-cta">Initiate Engagement</a>
     </nav>
   </header>
@@ -331,6 +422,7 @@
       <a href="#contact" class="btn-primary">Consultancy Inquiry</a>
       <a href="https://wa.me/6581683119?text=Hi%204ABNC%20team,%20I%20am%20interested%20in%20your%20technical%20advisory%20services." target="_blank" class="btn-whatsapp">WhatsApp General Inquiry</a>
       <a href="#ev-charge" class="btn-secondary">Explore Where2Charge EV Charge</a>
+      <a href="#eduflow" class="btn-secondary">Explore EduFlow</a>
     </div>
   </section>
 
@@ -413,6 +505,82 @@
     </div>
   </section>
 
+  <!-- EDUFLOW TUITION CENTRE PLATFORM -->
+  <div class="section-title" id="eduflow">
+    <div class="badge badge-indigo">New Platform</div>
+    <h2>EduFlow Tuition Centre Platform</h2>
+    <p>Scheduling, billing and parent communication for Singapore tuition centres, in one workspace</p>
+  </div>
+
+  <section class="bento-grid eduflow">
+    <div class="bento-card col-8">
+      <div class="ef-mock" aria-hidden="true">
+        <span></span>
+        <span class="ef-day">Mon</span><span class="ef-day">Tue</span><span class="ef-day">Wed</span><span class="ef-day">Thu</span><span class="ef-day">Fri</span>
+        <span>3pm</span>
+        <span class="ef-class">P6 Maths · Rm 1</span><span class="ef-slot"></span><span class="ef-class alt">Sec 2 Sci</span><span class="ef-slot"></span><span class="ef-class">P5 English</span>
+        <span>4pm</span>
+        <span class="ef-slot"></span><span class="ef-class alt">Sec 4 A-Maths</span><span class="ef-slot"></span><span class="ef-class">P6 Maths · Rm 2</span><span class="ef-slot"></span>
+        <span>5pm</span>
+        <span class="ef-class">P4 Science</span><span class="ef-slot"></span><span class="ef-class">JC1 Chem</span><span class="ef-slot"></span><span class="ef-class alt">Sec 3 Phys</span>
+        <span>6pm</span>
+        <span class="ef-slot"></span><span class="ef-class">P3 Chinese</span><span class="ef-slot"></span><span class="ef-class alt">Sec 1 Maths</span><span class="ef-slot"></span>
+      </div>
+      <div class="card-content">
+        <div class="card-tag">Operations Hub</div>
+        <h3>Run the Whole Centre From One Calendar</h3>
+        <p>Book classrooms, assign teachers and build recurring timetables. EduFlow checks every booking for room and teacher clashes before it is saved, so double-bookings never reach the schedule.</p>
+      </div>
+    </div>
+
+    <div class="bento-card col-4">
+      <div class="card-content top">
+        <div class="ef-icon" aria-hidden="true">💳</div>
+        <div class="card-tag">Billing</div>
+        <h3>PayNow Invoicing</h3>
+        <p>Generate tuition invoices with a Singapore PayNow QR code on each one, track paid and outstanding fees, and calculate teacher payouts from the hours taught.</p>
+      </div>
+    </div>
+
+    <div class="bento-card col-4">
+      <div class="card-content top">
+        <div class="ef-icon" aria-hidden="true">✅</div>
+        <div class="card-tag">Classroom</div>
+        <h3>Attendance &amp; Parent Updates</h3>
+        <p>Mark attendance in class and send parents email or WhatsApp notices from reusable templates.</p>
+      </div>
+    </div>
+
+    <div class="bento-card col-4">
+      <div class="card-content top">
+        <div class="ef-icon" aria-hidden="true">📊</div>
+        <div class="card-tag">Insight</div>
+        <h3>Student Registry &amp; Analytics</h3>
+        <p>One record per student and guardian, with enrolment, archive and CSV export, plus dashboards for enrolment, revenue and room use.</p>
+      </div>
+    </div>
+
+    <div class="bento-card col-4">
+      <div class="card-content top">
+        <div class="ef-icon" aria-hidden="true">🛡️</div>
+        <div class="card-tag">Security &amp; PDPA</div>
+        <h3>Built for Children's Data</h3>
+        <p>Each centre's data is isolated by database security rules, with verified email and optional two-factor sign-in. <a href="eduflow-privacy.html" class="text-link">Read the privacy policy &rarr;</a></p>
+      </div>
+    </div>
+
+    <div class="ef-strip">
+      <div>
+        <h3>Start free: up to 2 students for 6 months</h3>
+        <p>Sign in with Google and your centre's workspace is ready. Upgrade to a paid plan (SGD, billed monthly) when you grow.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="https://wa.me/6581683119?text=Hi%204ABNC%20team,%20I%20would%20like%20a%20demo%20of%20EduFlow%20for%20my%20tuition%20centre." target="_blank" rel="noopener" class="btn-whatsapp">Book an EduFlow Demo</a>
+        <a href="#contact" class="btn-secondary">Enquire</a>
+      </div>
+    </div>
+  </section>
+
   <!-- INTAKE FORM & WHATSAPP ACTIONS -->
   <div class="section-title" id="contact">
     <h2>Partner With 4A Business and Consultancy</h2>
@@ -425,6 +593,9 @@
     </a>
     <a href="https://wa.me/6581683119?text=Hi%204ABNC%20team,%20I%20would%20like%20to%20discuss%20CPO/Fleet%20integration%20on%20your%20EV%20platform." target="_blank" class="btn-whatsapp">
       ⚡ EV Charge Integration (WhatsApp)
+    </a>
+    <a href="https://wa.me/6581683119?text=Hi%204ABNC%20team,%20I%20would%20like%20a%20demo%20of%20EduFlow%20for%20my%20tuition%20centre." target="_blank" rel="noopener" class="btn-whatsapp">
+      🎓 EduFlow Demo (WhatsApp)
     </a>
   </div>
 
@@ -451,6 +622,7 @@
           <option>Project Management & Execution</option>
           <option>Where2Charge EV Charge - CPO Integration</option>
           <option>Where2Charge EV Charge - Fleet & Commercial Partnership</option>
+          <option>EduFlow - Tuition Centre Platform</option>
         </select>
       </div>
 
@@ -466,7 +638,10 @@
   <!-- FOOTER -->
   <footer>
     <div>&copy; 2026 4A Business and Consultancy. All rights reserved.</div>
-    <div>Hardware-Agnostic Software Intelligence</div>
+    <div class="footer-links">
+      <a href="#eduflow">EduFlow</a>
+      <a href="eduflow-privacy.html">EduFlow Privacy Policy</a>
+    </div>
   </footer>
 
 </body>
