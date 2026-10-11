@@ -182,7 +182,7 @@
     .ring .fill { stroke: var(--volt); stroke-linecap: round; stroke-dasharray: 534; stroke-dashoffset: 534; animation: charge 4.5s ease-in-out infinite; filter: drop-shadow(0 0 8px rgba(45, 245, 160, 0.7)); }
     @keyframes charge { 0% { stroke-dashoffset: 534; } 70%, 100% { stroke-dashoffset: 40; } }
     .ring-label { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
-    .ring-label strong { display: block; font-family: var(--font-display); font-size: 2.4rem; line-height: 1; }
+    .ring-label strong { display: block; font-family: var(--font-display); font-size: 2.1rem; line-height: 1; margin-bottom: 4px; }
     .ring-label span { color: var(--muted); font-size: 0.8rem; }
 
     /* EduFlow door visual: stacked class chips */
@@ -274,7 +274,10 @@
     .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
 
     .app-shot { display: flex; align-items: center; gap: 16px; margin-top: 28px; padding: 12px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); max-width: 460px; }
-    .app-shot img { width: 120px; height: 104px; object-fit: cover; border-radius: 12px; }
+    .app-shot img { width: 92px; height: auto; aspect-ratio: 640 / 1337; object-fit: cover; border-radius: 14px; border: 3px solid #1d2a24; flex: none; }
+    .app-shot .stat { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; line-height: 1; color: var(--volt); margin-bottom: 6px; }
+    .text-volt { color: var(--volt); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-block; margin-top: 8px; }
+    .text-volt:hover { text-decoration: underline; }
     .app-shot p { color: var(--muted); font-size: 0.9rem; }
     .app-shot strong { color: var(--text); display: block; font-size: 0.98rem; }
 
@@ -283,6 +286,7 @@
     /* ========================================================================== */
     #eduflow .glow { background: var(--indigo-deep); right: -300px; top: 0; opacity: 0.28; }
     #eduflow .eyebrow { color: var(--indigo); }
+    .new-pill { background: var(--indigo-deep); color: #fff; border-radius: 999px; padding: 2px 9px; font-size: 0.7rem; letter-spacing: 1px; }
     #eduflow .ticks li::before { background: var(--indigo-dim); color: var(--indigo); }
 
     .demo {
@@ -521,16 +525,16 @@
             <div class="door-visual" aria-hidden="true">
               <div class="ring">
                 <svg viewBox="0 0 200 200"><circle class="track" cx="100" cy="100" r="85" fill="none" stroke-width="12"/><circle class="fill" cx="100" cy="100" r="85" fill="none" stroke-width="12"/></svg>
-                <div class="ring-label"><div><strong>⚡</strong><span>Charging</span></div></div>
+                <div class="ring-label"><div><strong>2,600+</strong><span>chargers in Singapore</span></div></div>
               </div>
             </div>
             <h3>Every charger. One app.</h3>
-            <p>Find live availability across networks, plug in and pay from a single wallet. Open APIs for operators and fleets.</p>
+            <p>Every public charger in Singapore on one map, from LTA DataMall. Plug in and pay from a single wallet. Open APIs for operators and fleets.</p>
           </a>
 
           <a href="#eduflow" class="door ef reveal d1">
             <div class="door-top">
-              <span class="eyebrow"><span class="dot"></span>EduFlow · Tuition centres</span>
+              <span class="eyebrow"><span class="dot"></span>EduFlow · New · Tuition centres</span>
               <span class="door-go" aria-hidden="true">→</span>
             </div>
             <div class="door-visual" aria-hidden="true">
@@ -550,9 +554,9 @@
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span class="v">One wallet, every network</span><span>Live charger availability</span><span class="v">Open APIs for operators</span><span>AI load balancing</span>
+        <span class="v">2,600+ chargers in Singapore</span><span>One wallet, every network</span><span class="v">Open APIs for operators</span><span>AI load balancing</span>
         <span class="i">Clash-free timetables</span><span>PayNow invoicing</span><span class="i">Parent updates on WhatsApp</span><span>PDPA-ready</span>
-        <span class="v">One wallet, every network</span><span>Live charger availability</span><span class="v">Open APIs for operators</span><span>AI load balancing</span>
+        <span class="v">2,600+ chargers in Singapore</span><span>One wallet, every network</span><span class="v">Open APIs for operators</span><span>AI load balancing</span>
         <span class="i">Clash-free timetables</span><span>PayNow invoicing</span><span class="i">Parent updates on WhatsApp</span><span>PDPA-ready</span>
       </div>
     </div>
@@ -568,7 +572,7 @@
           <div class="reveal">
             <span class="eyebrow"><span class="dot"></span>Where2Charge</span>
             <h2>Every charger.<br>One app. One wallet.</h2>
-            <p class="lede">EV drivers juggle a different app for every charging network. Where2Charge is the software layer that brings them together for drivers, charge point operators and fleets.</p>
+            <p class="lede">EV drivers juggle a different app for every charging network. Where2Charge puts every public charger in Singapore on one map, using LTA DataMall data, and brings drivers, charge point operators and fleets together.</p>
 
             <div class="tabs">
               <div class="tablist" role="tablist" aria-label="Where2Charge for">
@@ -579,7 +583,7 @@
               <div class="panel active" role="tabpanel" id="p-drivers" aria-labelledby="tab-drivers">
                 <h3>Find, charge and pay anywhere</h3>
                 <ul class="ticks">
-                  <li>One map across every connected charging network</li>
+                  <li>2,600+ public chargers across Singapore on one map, grouped by area</li>
                   <li>Live availability before you drive there</li>
                   <li>One tap to pay from a single wallet, no more app per operator</li>
                 </ul>
@@ -657,8 +661,12 @@
               </div>
             </div>
             <div class="app-shot">
-              <img src="where2charge.png" alt="Where2Charge app on a phone at a charging station">
-              <p><strong>Built for the forecourt</strong>Live roaming status, nearby chargers and payment on one screen.</p>
+              <img src="w2c-app-map.jpg" alt="Where2Charge app showing chargers across Singapore on a map" width="640" height="1337" loading="lazy">
+              <div>
+                <div class="stat">2,600+</div>
+                <p><strong>Public chargers across Singapore</strong>Charger locations from LTA DataMall, the Land Transport Authority's open data service.</p>
+                <a href="https://where2charge.4abnc.com" target="_blank" rel="noopener" class="text-volt">Visit where2charge.4abnc.com →</a>
+              </div>
             </div>
           </div>
         </div>
@@ -679,7 +687,7 @@
       <div class="wrap">
         <div class="split flip">
           <div class="reveal">
-            <span class="eyebrow"><span class="dot"></span>EduFlow</span>
+            <span class="eyebrow"><span class="dot"></span>EduFlow <span class="new-pill">New</span></span>
             <h2>Your whole tuition centre, on one calm calendar.</h2>
             <p class="lede">Rooms, teachers, students, fees and parents in one workspace built for Singapore tuition centres. Every booking is checked for clashes before it is saved.</p>
             <ul class="ticks" style="margin-top:28px">
@@ -738,10 +746,10 @@
 
         <div class="free-band reveal">
           <div>
-            <h3>Start free: up to 2 students for 6 months.</h3>
-            <p>Sign in with Google and your centre's workspace is ready. Upgrade to a paid plan (SGD, billed monthly) as you grow.</p>
+            <h3>Be one of our first centres.</h3>
+            <p>EduFlow is new. Start free with up to 2 students for 6 months, get set up with our team, and help shape what we build next.</p>
           </div>
-          <a href="#contact" data-topic="ef" class="btn btn-indigo">Get started <span class="arrow">→</span></a>
+          <a href="#contact" data-topic="ef" class="btn btn-indigo">Join early access <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -827,7 +835,7 @@
               <div class="field full"><label for="f-msg">How can we help?</label><textarea id="f-msg" name="message" required placeholder="A few lines about your goals and timeline"></textarea></div>
             </div>
 
-            <p class="consent">We use these details only to reply to your enquiry and will not add you to a mailing list. Read how EduFlow handles data in its <a href="eduflow-privacy.html">privacy policy</a>.</p>
+            <p class="consent">We use these details only to reply to your enquiry and will not add you to a mailing list. See our <a href="privacy.html">privacy policy</a>.</p>
             <button type="submit" class="btn btn-corp submit">Send enquiry <span class="arrow">→</span></button>
             <div class="form-status" id="form-status" role="status"></div>
           </form>
@@ -853,7 +861,7 @@
         </div>
         <div><h4>Products</h4><a href="#where2charge">Where2Charge</a><a href="#eduflow">EduFlow</a></div>
         <div><h4>Company</h4><a href="#about">Consultancy</a><a href="#contact">Contact</a></div>
-        <div><h4>Legal</h4><a href="eduflow-privacy.html">EduFlow Privacy Policy</a></div>
+        <div><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="eduflow-privacy.html">EduFlow Privacy</a><a href="https://where2charge.4abnc.com/privacy.html" target="_blank" rel="noopener">Where2Charge Privacy</a></div>
       </div>
       <div class="foot-bottom">
         <span>&copy; 2026 4A Business and Consultancy. All rights reserved.</span>
